@@ -1,0 +1,211 @@
+*{
+    margin: 15px;
+    padding: 0px;
+}
+/*Navigationbar*/
+#navbar{
+    position: relative;
+   display: flex;
+   align-items: center;
+   height: 80px;
+}
+#navbar::before{
+    content: "";
+    background-color:rgb(247, 168, 181);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.4;
+}
+.logo{
+    margin: 34px 45px;
+}
+.logo img{
+    border-radius: 60%;
+}
+/*navigation listing*/
+#navbar ul{
+display: flex;
+position: relative;
+}
+
+#navbar ul li {
+    list-style: none;
+    font-size: 1.3rem;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+#navbar ul li a{
+    display: block;
+    padding: 3px;
+    text-decoration: none;
+}
+#navbar ul li a:hover{
+color: white;
+background-color: skyblue;
+border-radius: 50%;
+}
+/*.submenu{
+    display: block;
+    
+}
+#navbar ul li :hover.submenu{
+    display: block;
+    position: absolute;
+    background-color: pink;
+    margin: 20px;
+}
+#navbar ul li:hover .submenu ul{
+    display: block;
+    margin: 10px;
+}
+#navbar ul li:hover .submenu ul li{
+    width: 100px;
+    padding: 5px;
+    border-bottom: 1px dotted ;
+    background: transparent;
+    text-align: left;
+    
+}*/
+
+
+.search{
+    padding: 3px 22px;
+    display: flex;
+}
+
+.btn{
+background-color: pink;
+margin: 2px;
+padding: 3px 2px;
+border: 2px solid pink;
+align-items: flex-end;
+color: purple;
+    }
+ #menubtn{
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: purple;
+ }
+/*Home*/
+#Home{
+    display: flex;
+    flex-direction: column;
+    padding: 3px 200px;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+    background:url(icehome.png)no-repeat center center/cover;
+    
+    
+}
+
+#Home h2{
+    text-align: center;
+ 
+    font-weight: bold;
+    font-size: 40px;
+    margin: 1px;
+    color:white;
+    
+}
+/*#Home p{
+    font-size: 1em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: violet;
+    background-color: rgb(230, 230, 181);
+}*/
+.About{
+    display: flex;
+    justify-content:center;
+    flex-direction: column;
+    align-items: center;
+    height: 400px;
+   background:url(sec2.png)no-repeat center center/cover;
+   opacity: 0.7;
+}
+.About h2{
+    text-align: center;
+}
+.About p{
+text-decoration: underline 2px;
+font-family: 'Satisfy', cursive;
+font-size: 1rem;
+
+}
+
+
+
+/*utility class*/
+.h-primary{
+    font-size: 2.8rem;
+    padding: 12px
+}
+.h-primary center{
+    font-size: 2.8rem;
+    padding: 12px
+    
+
+}
+.btn1{
+    padding: 6px 20px;
+    border: 2px solid lightblue;
+    background-color: skyblue;
+    margin: 17px;
+    
+}
+.h-secondary{
+text-align: center;
+font-size: 2.6rem;
+padding: 10px;
+}
+
+/* Menu*/
+.menu{
+    background: skyblue;
+}
+.menu .box-container{
+    display: grid;
+grid-template-columns: repeat(auto-fit,minmax(30rem,1fr));
+gap: 1.5rem;
+
+}
+.menu .box-container.box.image{
+   height: 30rem;
+    overflow: hidden;
+    width: 100;
+    text-align: center;
+}
+.menu .box-container.box.image img{
+    object-fit: cover;
+
+}
+.menu .box-container.box.content{
+    padding: 1.5rem;
+    text-align: center;
+}
+.menu .box-container.box.content.title{
+    font: size 2.5rem;
+    
+}
+.menu .box-container.box.content.p{
+font-size: 1.6rem;
+line-height: 1.8;
+color: red;
+padding: 1rem 0;
+}
+.menu .box-container.box.content.price{
+    color:red;
+font: size 2.5rem;
+padding: .5rem;
+}
+/*prices*/
+#price{
+    display: flex;
+    flex-direction: column;
+    padding: 3px 200px;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+    background-color: pink;
+}
