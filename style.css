@@ -199,13 +199,53 @@ padding: 1rem 0;
 font: size 2.5rem;
 padding: .5rem;
 }
-/*prices*/
-#price{
+/*order*/
+.order form{
+    padding: rem;
+    background: pink;
+    box-shadow: black;
+
+}
+.order form .box-container{
     display: flex;
-    flex-direction: column;
-    padding: 3px 200px;
-    height: 400px;
-    justify-content: center;
-    align-items: center;
-    background-color: pink;
+flex-wrap: wrap;
+gap: 2rem
+}
+.order form .box-container .box{
+    flex: 1 1 41rem;
+
+}
+.order form .box-container .box.inputBox input,
+.order form .box-container .box.inputBox textarea{
+    width: 100;
+    margin: 1rem 0;
+    padding: 1.2em 1.4rem;
+    font-size: 1.7rem;
+    color: black;
+    border:1px solid black;
+}
+
+.order form .box-container .box.inputBox input::placeholder,
+.order form .box-container .box.inputBox textarea::placeholder{
+    text-transform: capitalize;
+
+}
+
+.order form .box-container .box.inputBox input:focus,
+.order form .box-container .box.inputBox textarea:focus{
+background-color: brown;
+color: white;
+}
+.order form .box-container .box.inputBox input:focus::placeholder,
+.order form .box-container .box.inputBox textarea:focus::placeholder{
+    color: white;
+}
+.order form .box-container .box.inputBox textarea{
+    height: 20rem;
+    resize: none;
+}
+
+.order form .box-container .box.inputBox span{
+    color: red;
+    font-size: 2rem;
 }
