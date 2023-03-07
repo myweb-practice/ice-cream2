@@ -17,9 +17,18 @@
 <ul>
     <li class="item"><a href="">Home</a></li>
     <li class="item"><a href="">About</a></li>
-    <li class="item"><a href="">Menu</a></li>
-    <li class="item"><a href="">Reviews</a></li>
-    <li class="item"><a href="">Order now</a></li>
+    <li class="item dropdown">
+      <button class="dropbtn">Menu <i class="fa-solid fa-caret-down"></i></button>
+      <div class="dropdown-content">
+         <a href="#">Vanilla</a>
+         <a href="#">Chocolate</a>
+         <a href="#">Strawbery</a>
+         <a href="#">pistacho</a>
+      </div>
+
+    </li>
+    <li class="item"><a href="">Order</a></li>
+    <li class="item"><a href="">Contact us</a></li>
 <div class="search">
     <input type="text" name="search" id="search">
     <button class="btn"><i class="fa-solid fa-magnifying-glass"></i></button>
@@ -50,7 +59,7 @@
          </div>
          <div class="content">
             <h3 class="title">Real Vanilla Ice-cream</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis libero repellendus sed! Alias cum qui officia vitae consequuntur repellat eligendi impedit delectus laborum harum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis libero repellendus sed! Alias cum qui officia vitae consequuntur .</p>
             <div class="price">4euros</div>
          </div>
     </div>
@@ -61,7 +70,7 @@
         </div>
         <div class="content">
            <h3 class="title">Real Strawbery Ice-cream</h3>
-           <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non eaque consectetur deserunt iure cupiditate vero! Officiis quos nostrum commodi ratione, laboriosam earum rerum iste!</p>
+           <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non eaque consectetur deserunt iure cupiditate vero! Officiis!</p>
            <div class="price">4euros</div>
         </div>
    </div>
@@ -72,7 +81,7 @@
     </div>
     <div class="content">
        <h3 class="title">Real Chocolate Ice-cream</h3>
-       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi sed voluptas, repudiandae reiciendis esse asperiores aspernatur voluptatem! Voluptate odit libero magnam. Cupiditate, in aliquam.</p>
+       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi sed voluptas, repudiandae reiciendis esse asperiores.</p>
        <div class="price">4euros</div>
     </div>
 </div>
@@ -83,9 +92,7 @@
     </div>
     <div class="content">
        <h3 class="title">Real Vanilla Ice-cream</h3>
-       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At iusto deleniti, inventore quasi earum qui. Veritatis ab,
-
-       </p>
+       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At iusto deleniti, inventore quasi earum qui. Veritatis ab, </p>
        <div class="price">4euros</div>
     </div>
 </div>
@@ -95,65 +102,64 @@
 
 <hr>
 
-<section class="order" id="order">
-   <h1 class="h-secondary">Order now</h1>
-   <form action="">
-      <div class="box-container">
-         <div class="box">
-            <div class="inputBox">
-               <span>Full name</span>
-         <input type="text" placeholder="enter your name">
-            </div>
+<section class="wrap">
+   <div class="container">
+      <div class="contact-box">
+         <div class="left"></div>
+         <div class="right">
+            <h2>Order Now</h2>
+            <input type="text" class="field" placeholder="Your Name">
+            <input type="text" class="field" placeholder="Ice-cream Name">
+            <input type="text" class="field" placeholder="Order details">
+            <input type="number" class="field" placeholder="Your Phone ">
+            <textarea class="field area" placeholder="address"></textarea>
+            <input type="number" class="field" placeholder="quantity">
+            <button class="btn2">Order now</button>
          </div>
-
-         <div class="box">
-            <div class="inputBox">
-               <span>ice-cream name</span>
-         <input type="text" placeholder="ice-cream you want">
-            </div>
-         </div>
-
-         <div class="box">
-            <div class="inputBox">
-               <span>order details</span>
-         <input type="text" placeholder="toppings">
-            </div>
-         </div>
-
-         <div class="box">
-            <div class="inputBox">
-               <span>your address</span>
-         <input type="text" placeholder="enter your address">
-            </div>
-         </div>
-         <div class="box">
-            <div class="inputBox">
-               <span>phone number</span>
-         <input type="number" placeholder="enter your number">
-            </div>
-         </div>
-         <div class="box">
-            <div class="inputBox">
-               <span>quantity</span>
-         <input type="number" placeholder="how much you want">
-            </div>
-         </div>
-         <div class="box">
-            <div class="inputBox">
-               <span>when you want</span>
-         <input type="datetime-local" >
-            </div>
-         </div>
-         <input type="submit" value="order now" class="btn">
       </div>
-   </form>
+   </div>
 </section>
+
 <hr>
 <section class="footer">
    <div class="icon-container">
+      <div class="icons">
       <i class="fa-solid fa-address-book"></i>
       <h3>address</h3>
+      <p>Rue Phillipe <br>
+         Le Bon <br>
+         Belgium</p>
+      </div>
+   
+
+   <div class="icons">
+      <i class="fa-solid fa-phone"></i>
+      <h3>phone</h3>
+      <p>125-847-578</p>
+      <p>125-847-578</p>
    </div>
+
+   <div class="icons">
+      <i class="fa-solid fa-clock"></i>
+      <h3>Opening hours</h3>
+      <p>monday-friday : 2:00-12:00 <br>
+         saturday : 2:00-11:00</p> 
+      </div>  
+
+      <div class="icons">
+         <i class="fa-solid fa-envelope"></i>
+         <h3>email</h3>
+         <a href="#" class="link">icecream@gmail.com</a>
+      </div>
+
+   </div>
+   <div class="share">
+      <a href="#"  class="fa-brands fa-facebook"></a>
+      <a href="#"  class="fa-brands fa-twitter"></a>
+      <a href="#"  class="fa-brands fa-instagram"></a>
+      <a href="#" class="fa-brands fa-linkedin"></a>
+   </div>
+   <div class="credit">created by <span>archana</span> | all right reserved!</div>
 </section>
 </body>
 </html>

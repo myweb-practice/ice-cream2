@@ -8,6 +8,8 @@
    display: flex;
    align-items: center;
    height: 80px;
+   box-shadow:10px 10px 10px grey;
+
 }
 #navbar::before{
     content: "";
@@ -45,28 +47,56 @@ color: white;
 background-color: skyblue;
 border-radius: 50%;
 }
-/*.submenu{
-    display: block;
-    
-}
-#navbar ul li :hover.submenu{
-    display: block;
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+ }
+
+ .dropdown .dropbtn {
+    font-size: 1.3rem;
+    border: none;
+    outline: none;
+    color:purple;
+    padding: 6px 10px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+ }
+
+ .navbar a:hover,
+ .dropdown:hover .dropbtn {
+    background-color:skyblue;
+ }
+
+ .dropdown-content {
+    display: none;
     position: absolute;
-    background-color: pink;
-    margin: 20px;
-}
-#navbar ul li:hover .submenu ul{
+    background-color:coral;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+ }
+
+ .dropdown-content a {
+    float: none;
+    color: purple;
+    padding: 12px 16px;
+    text-decoration: none;
     display: block;
-    margin: 10px;
-}
-#navbar ul li:hover .submenu ul li{
-    width: 100px;
-    padding: 5px;
-    border-bottom: 1px dotted ;
-    background: transparent;
     text-align: left;
-    
-}*/
+ }
+
+ .dropdown-content a:hover {
+    background-color:pink;
+ }
+
+ .dropdown:hover .dropdown-content {
+    display: block;
+    background: rgba(240, 149, 149, 0.8);
+
+    margin-top: -10px;
+ }
 
 
 .search{
@@ -96,6 +126,8 @@ color: purple;
     justify-content: center;
     align-items: center;
     background:url(images/icehome.png)no-repeat center center/cover;
+    box-shadow:10px 10px 10px grey;
+
     
     
 }
@@ -109,12 +141,7 @@ color: purple;
     color:white;
     
 }
-/*#Home p{
-    font-size: 1em;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    color: violet;
-    background-color: rgb(230, 230, 181);
-}*/
+
 .About{
     display: flex;
     justify-content:center;
@@ -123,6 +150,8 @@ color: purple;
     height: 400px;
    background:url(images/sec2.png)no-repeat center center/cover;
    opacity: 0.7;
+   box-shadow:10px 10px 10px black;
+
 }
 .About h2{
     text-align: center;
@@ -162,12 +191,13 @@ padding: 10px;
 
 /* Menu*/
 .menu{
-    background: skyblue;
+    background: lightcoral;
 }
 .menu .box-container{
     display: grid;
-grid-template-columns: repeat(auto-fit,minmax(30rem,1fr));
-gap: 1.5rem;
+grid-template-columns: repeat(auto-fit,minmax(20rem,1fr));
+gap: 1.3rem;
+box-shadow: 10px 10px 10px black;
 
 }
 .menu .box-container.box.image{
@@ -175,14 +205,21 @@ gap: 1.5rem;
     overflow: hidden;
     width: 100;
     text-align: center;
+   
+   
+   
 }
 .menu .box-container.box.image img{
     object-fit: cover;
+   
+    
 
 }
 .menu .box-container.box.content{
     padding: 1.5rem;
     text-align: center;
+  
+    
 }
 .menu .box-container.box.content.title{
     font: size 2.5rem;
@@ -191,61 +228,206 @@ gap: 1.5rem;
 .menu .box-container.box.content.p{
 font-size: 1.6rem;
 line-height: 1.8;
-color: red;
 padding: 1rem 0;
+
 }
 .menu .box-container.box.content.price{
-    color:red;
-font: size 2.5rem;
+font-size: 5.5rem;
 padding: .5rem;
 }
 /*order*/
-.order form{
-    padding: rem;
-    background: pink;
-    box-shadow: black;
-
-}
-.order form .box-container{
-    display: flex;
-flex-wrap: wrap;
-gap: 2rem
-}
-.order form .box-container .box{
-    flex: 1 1 41rem;
-
-}
-.order form .box-container .box.inputBox input,
-.order form .box-container .box.inputBox textarea{
-    width: 100;
-    margin: 1rem 0;
-    padding: 1.2em 1.4rem;
-    font-size: 1.7rem;
-    color: black;
-    border:1px solid black;
-}
-
-.order form .box-container .box.inputBox input::placeholder,
-.order form .box-container .box.inputBox textarea::placeholder{
-    text-transform: capitalize;
+.container{
+ position: relative;
+ display: flex;
+justify-content: center;
+align-items: center;
+width: 100%;
+height: 100%;
+padding: 20px 100px;
+margin: 0;
+box-sizing: border-box;
+font-family: 'Quicksand', sans-serif;
 
 }
 
-.order form .box-container .box.inputBox input:focus,
-.order form .box-container .box.inputBox textarea:focus{
-background-color: brown;
-color: white;
+.container:after{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: url(images/order1.png)no-repeat center;
+    background-size: cover ;
+    z-index:-1;
+   opacity: 0.6;;
 }
-.order form .box-container .box.inputBox input:focus::placeholder,
-.order form .box-container .box.inputBox textarea:focus::placeholder{
+
+.contact-box{
+    max-width: 850px;
+    display: grid;
+grid-template-columns: repeat(2,1fr);
+justify-content: center;
+align-items: center;
+text-align: center;
+background-color:white;
+box-shadow: 0px 0px 19px 5px rgba(0,0,0,0.19);
+}
+.left{
+    height: 100%;
+    background: url(images/order1.png)no-repeat center;
+   background-size: cover;
+}
+.right{
+    padding: 25px 40px;
+}
+h2{
+    position:relative;
+    padding-bottom: 10px;
+    margin: bottom 10px;
+    text-align: center;
+}
+h2:after{
+    content:"";
+    position:absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 4px;
+    width: 50px;
+    border-radius: 2px;
+   
+}
+.field{
+width: 100%;
+padding: 0.5rem 1rem;
+outline: none;
+border: 2px solid rgba(0,0,0,0,0);
+background-color: rgba(230, 230, 230, 0.6);
+font-size: 1.1rem;
+margin-bottom: 22px;
+transition: .3s;
+
+}
+.field:hover{
+background-color: rgba(0, 0, 0, 0.1);
+}
+.field:focus{
+    background-color: white;
+border: 2px solid rgba(30,85,250,0.47);
+}
+.area{
+    min-height: 150px;
+}
+.btn2{
+    width: 100%;
+    padding: 0.5rem 1rem;
+    font-size: 1.1rem;
+    background-color: #2ecc71;
+    cursor: pointer;
+    outline: none;
+    border:none;
     color: white;
+    transition: .3s;
+
 }
-.order form .box-container .box.inputBox textarea{
-    height: 20rem;
-    resize: none;
+.btn2:hover{
+    background-color: green;
+}
+@media screen and(max-width:880px) {
+    .contact-box{
+        grid-template-columns: 1fr;
+    }
+    .left{
+        height: 200px;
+    }
+    
+}
+/*footer*/
+.footer{
+    background: url(images/footer.png)no-repeat center center/cover;
+    opacity: 0.8;
+    margin-top: 2rem;
+    text-align: center;
+    box-shadow:10px 10px 20px black;
+
 }
 
-.order form .box-container .box.inputBox span{
-    color: red;
+.footer .icon-container{
+    display:grid;
+grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));
+gap: 2rem;
+}
+
+.footer .icon-container.icons{
+    text-align: center;
+    padding: 3rem 2rem;
+    height: 10px;
+    width: 10px;
+
+}
+.footer .icon-container.icons i{
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%;
+    color:white ;
+    margin-bottom: 5rem;
+    line-height: 5.8rem;
+    font-size: 2rem;
+}
+.footer .icon-container.icons h3{
+    font-size: 5rem;
+    color: black;
+    padding: 1rem 0;
+    text-transform: capitalize;
+}
+.footer .icon-container.icons p{
+    line-height: 1.5;
+    font: size 1.7rem;
+    color:beige;
+    text-transform: none;
+    
+}
+ .footer .icon-container.icons link{
+    font-size: 1.7rem;
+    line-height: 2rem;
+    color:black;
+    padding: .5rem 0;
+    display: block;
+    text-decoration:none;
+}
+
+.footer .icon-container.icons link:hover{
+    color:brown;
+    text-decoration:underline;
+
+}
+.footer .share{
+    margin:2rem 0;
+}
+.footer .share a{
+    height: 6rem;
+    width: 6rem;
+    line-height: 5.8rem;
+    color: white;
+    margin: 0 .3rem;
+    font-size: 2.5rem;
+}
+
+.footer .share a:hover{
+    background:brown;
+  
+}
+
+.footer .credit{
+    margin: 2rem;
+    padding: 3rem;
+    font-size: 2rem;
+    color: black;
+    background-color: brown;
+}
+
+.footer .credit span{
+    color: beige;
     font-size: 2rem;
 }
