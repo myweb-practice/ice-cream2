@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .choose {
+  width: 460px;
+  height: auto;
+  min-height: 340px;
+  font-size: 20px;
+  cursor: pointer;
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+  display: block;
+  position: relative;
+  z-index: 10;
+}
+
+.choose-header {
+  display: inline-block;
+  width: 450px;
+  border: solid 0.1vw black;
+  border-radius: 0.2vw;
+  background-color: white;
+  padding-left: 10px;
+  color: black;
+}
+
+.choose-header:hover {
+  opacity: 0.7;
+}
+
+.choose-body {
+  display: block;
+  position: absolute;
+}
+
+.button-group {
+  display: block;
+  cursor: pointer;
+  width: 460px;
+  text-align: left;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.choose-group {
+  padding-left: 20px;
+}
+
+.choose-group .button-group {
+  width: 100%;
+}
+
+.button-group[depth="-1"] {
+  color: green;
+}
+
+.hide {
+  display: none;
+}
+
+
+    </style>
+</head>
+
+<body>
+    <div class="choose">
+        <span class="choose-header">Select cup or cone</span>
+        <div class="choose-body hide">
+            
+        </div>
+      </div>
+
+      <script>
+
+        const obj={
+            cup: {
+             scoop1 : [
+              "vanilla",
+              "chocolate",
+              "strawbery",
+              "pistacho"
+            ],
+            scoop2 : [
+              "vanilla-chocolate",
+              "chocolate-strawbery",
+              "strawbery-pistacho",
+              "pistacho-vanilla",
+              
+            ]
+            }
+        };
+        initchoose(obj);
+         function chooseAddEvents(){ 
+          Array.from(document.getElementsByClassName("choose-header")).forEach(function(header) {
+            if (header.getAttribute("listener") !== "true") {
+              header.addEventListener("click", function() {
+                this.parentNode.getElementsByClassName("choose-body")[0].classList.toggle("hide");
+              });
+              header.setAttribute("listener", "true");
+            }
+          });
+          Array.from(document.getElementsByClassName("button-group")).forEach(function(but) {
+            if (but.getAttribute("listener") !== "true") {
+              but.addEventListener("click", function() {
+                if (this.getAttribute("depth") === "-1") {
+                  let header = this;
+                  while ((header = header.parentElement) && header.className !== "choose");
+                  header.getElementsByClassName("choose-header")[0].innerHTML = this.innerHTML;
+                  return;
+                }
+                const groups = Array.from(this.parentNode.getElementsByClassName("choose-group"));
+                groups.forEach(g => {
+                  if (g.getAttribute("uuid") === this.getAttribute("uuid") &&
+                    g.getAttribute("depth") === this.getAttribute("depth")) {
+                    g.classList.toggle("hide");
+                  }
+                });
+              });
+              but.setAttribute("listener", "true");
+            }
+          });
+        }
+        
+function initchoose(data) {
+  accordeons = Array.from(document.getElementsByClassName("accordeon-body"));
+  accordeons.forEach(acc => {
+    acc.innerHTML = "";
+    const route = (subObj, keyIndex = 0, parent = acc, depth = 0) => {
+      const keys = Object.keys(subObj);
+      if (typeof subObj === 'object' && !Array.isArray(subObj) && keys.length > 0) {
+        while (keyIndex < keys.length) {
+          var but = document.createElement("button");
+          but.className = "button-group";
+          but.setAttribute("uuid", keyIndex);
+          but.setAttribute("depth", depth);
+          but.innerHTML = keys[keyIndex];
+          var group = document.createElement("div");
+          group.className = "choose-group hide";
+          group.setAttribute("uuid", keyIndex);
+          group.setAttribute("depth", depth);
+          route(subObj[keys[keyIndex]], 0, group, depth + 1);
+          keyIndex++;
+          parent.append(but);
+          parent.append(group);
+        }
+      } else {
+        if (!Array.isArray(subObj)) subObj = [subObj];
+        subObj.forEach((e, i) => {
+          if (typeof e === 'object') {
+              route(e, 0, parent, depth);
+          } else {
+              var but = document.createElement("button");
+              but.className = "button-group";
+              but.setAttribute("uuid", i);
+              but.setAttribute("depth", "-1");
+              but.innerHTML = e;
+              parent.append(but);
+          }
+        });
+      }
+    };
+    route(data);
+  });
+  chooseAddEvents();
+}
+
+        
+        </script>
+</body>
+</html>

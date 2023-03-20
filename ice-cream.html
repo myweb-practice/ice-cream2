@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ice-cream</title>
     <link rel="stylesheet" href="style.css">
+    <script src="ice-cream.js"></script>
     <script src="https://kit.fontawesome.com/496b95e926.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -108,13 +109,56 @@
          <div class="left"></div>
          <div class="right">
             <h2>Order Now</h2>
+            <form action="#" id="myform">
             <input type="text" class="field" placeholder="Your Name">
-            <input type="text" class="field" placeholder="Ice-cream Name">
+           <select  id="cup">
+            <option value=""disabled selected hidden>Cup</option>
+            <option value="scoop1">1-Scoop</option>
+            <option>- Vanilla</option>
+            <option>- Chocolate</option>
+            <option>- Strawberry</option>
+            <option>- Pistacho</option>
+            <option disabled>──────────</option>
+
+            <option value="scoop2">2-Scoop</option>
+            <option>- Vanilla</option>
+            <option>- Chocolate</option>
+            <option>- Strawberry</option>
+            <option>- Pistacho</option>
+            <option disabled>──────────</option>
+
+            <option value="scoop3">3-Scoop</option>
+            <option>- Vanilla</option>
+            <option>- Chocolate</option>
+            <option>- Strawberry</option>
+            <option>- Pistacho</option>
+            <option disabled>──────────</option>
+            <option value="scoop1">None</option>
+           </select>
+           <select  id="cone">
+            <option value=""disabled selected hidden>Cone</option>
+            <option value="scoop1">1-Scoop</option>
+            <option>- Vanilla</option>
+            <option>- Chocolate</option>
+            <option>- Strawberry</option>
+            <option>- Pistacho</option>
+            <option disabled>──────────</option>
+            
+            <option value="scoop1">2-Scoop</option>
+            <option>- Vanilla</option>
+            <option>- Chocolate</option>
+            <option>- Strawberry</option>
+            <option>- Pistacho</option>
+            <option disabled>──────────</option>
+            <option value="scoop1">None</option>
+           </select>
+
             <input type="text" class="field" placeholder="Order details">
             <input type="number" class="field" placeholder="Your Phone ">
             <textarea class="field area" placeholder="address"></textarea>
-            <input type="number" class="field" placeholder="quantity">
-            <button class="btn2">Order now</button>
+            <input type="button" class="btn2"  onclick="myFunction()" value="Reset">
+           <button class="btn2">Order now</button>
+         </form>
          </div>
       </div>
    </div>
@@ -162,5 +206,6 @@
    </div>
    <div class="credit">@created by <span>archana</span> | all right reserved!</div>
 </section>
+
 </body>
 </html>
